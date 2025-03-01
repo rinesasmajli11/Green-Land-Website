@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+
+    <link rel="stylesheet" href="css/Eshop.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Shopping Cart Section -->
+      <div class="shopping-cart">
+        <header>
+          <a href="GreenShop.html" class="back-button"
+            ><i class="fa-solid fa-chevron-left"></i
+          ></a>
+          <h2 class="shopping-continue">Shopping Continue</h2>
+        </header>
+        <hr />
+        <div class="cart-header">
+          <h3 class="text-cart">Shopping cart</h3>
+          <p class="item-pg">You have 3 items in your cart</p>
+        </div>
+
+        
+        <div class="cart-items-list">
+          <div class="cart-item">
+            <img src="italy-pizza.jpg" alt="Italy Pizza">
+            <div class="item-details">
+                <h4>Italy Pizza</h4>
+                <p>Extra cheese and topping</p>
+            </div>
+            <div class="item-quantity">
+                <input type="number" value="1" min="1">
+            </div>
+            <div class="item-price">$681</div>
+            <button class="delete-button">🗑️</button>
+        </div>
+        
+            <div class="item-quantity">
+                <span class="quantity-display" data-id="${item.id}">${item.quantity}</span>
+            </div>
+        </div>
+      </div>
+
+      <!-- Card Details Section -->
+      <div class="card-details">
+        <h3 class="card-title">Card Details</h3>
+        <p class="card-pg">Card type</p>
+        <div class="card-types">
+          <img src="img/Rectangle 9 (1).png" alt="MasterCard" />
+          <img src="img/Rectangle 10.png" alt="Visa" />
+          <img src="img/Rectangle 11.png" alt="RuPay" />
+          <button>See all</button>
+        </div>
+
+        <form id="checkout-form">
+          <div class="form-group">
+            <label for="name" class="description-card">Name on card</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Name"
+              class="input-part"
+              autocomplete="off"
+            />
+            <div class="error-message" id="name-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="card-number" class="description-card"
+              >Card Number</label
+            >
+            <input
+              type="text"
+              id="card-number"
+              placeholder="1111 2222 3333 4444"
+              class="input-part"
+            />
+            <div class="error-message" id="card-number-error"></div>
+          </div>
+
+          <div class="form-group-together">
+            <div class="expiration-div">
+              <label for="expiration" class="description-card"
+                >Expiration date</label
+              >
+              <input
+                type="text"
+                id="expiration"
+                placeholder="mm/yy"
+                class="input-part"
+              />
+              <div class="error-message" id="expiration-error"></div>
+            </div>
+            <div class="cvv-div">
+              <label for="cvv" class="description-card">CVV</label>
+              <input
+                type="text"
+                id="cvv"
+                placeholder="123"
+                class="input-part"
+              />
+              <div class="error-message" id="cvv-error"></div>
+            </div>
+          </div>
+
+          <hr class="horizontal-line" />
+
+          <div class="summary">
+            <p>Subtotal: <span>$1,668</span></p>
+            <p>Shipping: <span>$4</span></p>
+            <p>Total (Tax incl.): <span>$1,672</span></p>
+          </div>
+
+          <button type="submit" class="checkout-button">
+            <span class="amount">$1,672</span>
+            <span class="text">Checkout</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Order Successful Modal -->
+    <div class="success-modal" id="success-modal">
+      <div class="modal-content">
+        <h3>Order has been paid successfully</h3>
+        <div class="checkmark">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/Eshop.js"></script>
+  </body>
+</html>
